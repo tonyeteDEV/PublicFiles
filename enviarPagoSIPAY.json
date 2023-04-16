@@ -1,14 +1,14 @@
 {
-  "key": "",                                                                                      //Key de Parámetros de Configuración
-  "nonce": "",                                                                                    //Nonce de Parámetros de Configuración
+  "key": "",
+  "nonce": "",
   "mode": "sha256",
-  "resource": "",                                                                                 //Resource de Parámetros de Configuración
+  "resource": "",
   "payload": {
     "operation_type": "sell",
     "operation_properties": {
       "tokenize": false,
       "checkmode": "3ds",
-      "expiration": 300,  //5 minutos.
+      "expiration": 300,
       "result_interactive": true,
       "url_callback": "https://webhook.site/fa8fea19-2a16-48d0-b861-d38982249547",
       "url_result": "https://webhook.site/fa8fea19-2a16-48d0-b861-d38982249547",

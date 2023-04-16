@@ -70,19 +70,16 @@
     ],
     "message_recipients": [
       {
-        "full_name": "Iván del Álamo",
-        "email": "irenebecedas@sipay.es",
-        "phone_number": "XXXXXXXXXXX",
-        "order": "12345678",
-        "amount": 1,
-        "currency": "EUR",
-        "reconciliation": "SipayQA",
-        "datetime": "09/05/2022 09:12",
-        "client": "Sipay Plus",
-        "custom": {
-          "custom1": "<b>Poliza</b>: prueba",
-          "custom5": "<b>Poliza</b>: prueba"
-        },
+        "full_name": "{{full_name}}",
+        "email": "{{email}}",
+        "phone_number": "{{tlf}}",
+        "order": "",
+        "amount": "{{amount}}",
+        "currency": "{{divisa}}",
+        "reconciliation": "SABA",
+        "datetime": "{{dateTime}}",
+        "client": "Saba Aparcamientos, S.A.",
+        "custom": {},
         "preferred_transport": "mail",
         "notification_templates": [
           {

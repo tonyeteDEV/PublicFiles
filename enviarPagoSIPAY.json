@@ -1,0 +1,108 @@
+{
+  "key": "",                                                                                      //Key de Parámetros de Configuración
+  "nonce": "",                                                                                    //Nonce de Parámetros de Configuración
+  "mode": "sha256",
+  "resource": "",                                                                                 //Resource de Parámetros de Configuración
+  "payload": {
+    "operation_type": "sell",
+    "operation_properties": {
+      "tokenize": false,
+      "checkmode": "3ds",
+      "expiration": 300,  //5 minutos.
+      "result_interactive": true,
+      "url_callback": "https://webhook.site/fa8fea19-2a16-48d0-b861-d38982249547",
+      "url_result": "https://webhook.site/fa8fea19-2a16-48d0-b861-d38982249547",
+      "payment_details_template": {
+        "title": "Realizar cobro",
+        "description": "Complete los datos de su tarjeta",
+        "logo_url": "https://sipay.es/wp-content/uploads/logo@0.75x.png",
+        "button": "Pagar",
+        "msg_result_ok": "Pago realizado con exito",
+        "msg_result_ko": "Algo no fue bien."
+      }
+    },
+    "notification_templates": [
+      {
+        "type": "data_request",
+        "transport": "mail",
+        "data": {
+          "body": "<html><head><b>Apreciado/a {{full_name}}</b>,</head><br><br>Le informamos que el pago del recibo de tu compra se realizará a través de la plataforma de Sipay.<br><br>Para ello, se ha generado a día {{datetime}} un enlace de pago con ticket {{ticket_number}} que le permite pagar {{amount}} {{currency}} de forma segura (cumpliendo la Normativa Internacional PCI-DSS) a través de su tarjeta de débito / crédito. Al abrirlo deberá teclear los datos referentes al número de tarjeta, caducidad y CVV.<br><br>Este enlace estará activo durante 24 horas.<br><br>Para gestionar tu pago, haz click en el siguiente enlace:<br><br>{{link}}<br><br>Una vez confirmado el pago por nuestra entidad bancaria, recibirás el justificante en tu dirección de correo electrónico.<br><br>No respondas a este correo electrónico. Si precisas más información, encuentras el enlace caducado o tienes algún problema con el mismo, contacta a través de soporte@cliente.es o en www.cliente-web.es.<br><br>Le agradecemos su confianza.<br><br>Un saludo.<br><br><html>",
+          "subject": "Pago "
+        }
+      },
+      {
+        "type": "data_result_ok",
+        "transport": "mail",
+        "data": {
+          "body": "Apreciado {{full_name}},<br><br>Le informamos que el cobro se ha realizado con exito.<br><br>Le agradecemos su confianza en {{client}}.",
+          "subject": "Resultado de pago"
+        }
+      },
+      {
+        "type": "data_result_ko",
+        "transport": "mail",
+        "data": {
+          "body": "Apreciado {{full_name}},<br><br>Le informamos que el cobro ha fallado.<br><br>Le agradecemos su confianza en {{client}}.",
+          "subject": "Resultado de pago"
+        }
+      },
+      {
+        "type": "data_request",
+        "transport": "sms",
+        "data": {
+          "text": "Apreciado/a {{full_name}},\nLe informamos que el pago del recibo de tu compra se realizará a través del siguiente enlace: {{link}}"
+        }
+      },
+      {
+        "type": "data_result_ok",
+        "transport": "sms",
+        "data": {
+          "text": "Apreciado/a {{full_name}},\nLe informamos que el cobro se ha realizado con exito.\nAgradecemos su confianza en {{client}}."
+        }
+      },
+      {
+        "type": "data_result_ko",
+        "transport": "sms",
+        "data": {
+          "text": "Apreciado {{full_name}},\nLe informamos que el cobro ha fallado."
+        }
+      }
+    ],
+    "message_recipients": [
+      {
+        "full_name": "Iván del Álamo",
+        "email": "irenebecedas@sipay.es",
+        "phone_number": "XXXXXXXXXXX",
+        "order": "12345678",
+        "amount": 1,
+        "currency": "EUR",
+        "reconciliation": "SipayQA",
+        "datetime": "09/05/2022 09:12",
+        "client": "Sipay Plus",
+        "custom": {
+          "custom1": "<b>Poliza</b>: prueba",
+          "custom5": "<b>Poliza</b>: prueba"
+        },
+        "preferred_transport": "mail",
+        "notification_templates": [
+          {
+            "type": "data_result_ok",
+            "transport": "mail",
+            "data": {
+              "subject": "replacement subject OK",
+              "body": "replacement body OK"
+            }
+          },
+          {
+            "type": "data_result_ko",
+            "transport": "mail",
+            "data": {
+              "subject": "replacement subject KO",
+              "body": "replacement body KO"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

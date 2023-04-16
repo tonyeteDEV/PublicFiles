@@ -26,7 +26,7 @@
         "type": "data_request",
         "transport": "mail",
         "data": {
-          "body": "<html><head><b>Apreciado/a {{full_name}}</b>,</head><br><br>Le informamos que el pago del recibo de tu compra se realizará a través de la plataforma de Sipay.<br><br>Para ello, se ha generado a día {{datetime}} un enlace de pago con ticket {{ticket_number}} que le permite pagar {{amount}} {{currency}} de forma segura (cumpliendo la Normativa Internacional PCI-DSS) a través de su tarjeta de débito / crédito. Al abrirlo deberá teclear los datos referentes al número de tarjeta, caducidad y CVV.<br><br>Este enlace estará activo durante 24 horas.<br><br>Para gestionar tu pago, haz click en el siguiente enlace:<br><br>{{link}}<br><br>Una vez confirmado el pago por nuestra entidad bancaria, recibirás el justificante en tu dirección de correo electrónico.<br><br>No respondas a este correo electrónico. Si precisas más información, encuentras el enlace caducado o tienes algún problema con el mismo, contacta a través de soporte@cliente.es o en www.cliente-web.es.<br><br>Le agradecemos su confianza.<br><br>Un saludo.<br><br><html>",
+          "body": "<html><head><b>Apreciado/a {{full_name}}</b>,</head><br><br>Le informamos que el pago del recibo de tu compra se realizará a través de la plataforma de Sipay.<br><br>Para ello, se ha generado a día {{dateTime}} un enlace de pago que le permite pagar {{amount}} {{currency}} de forma segura (cumpliendo la Normativa Internacional PCI-DSS) a través de su tarjeta de débito / crédito. Al abrirlo deberá teclear los datos referentes al número de tarjeta, caducidad y CVV.<br><br>Este enlace estará activo durante 24 horas.<br><br>Para gestionar tu pago, haz click en el siguiente enlace:<br><br>{{link}}<br><br>Una vez confirmado el pago por nuestra entidad bancaria, recibirás el justificante en tu dirección de correo electrónico.<br><br>No respondas a este correo electrónico. Si precisas más información, encuentras el enlace caducado o tienes algún problema con el mismo, contacta a través de soporte@cliente.es o en www.cliente-web.es.<br><br>Le agradecemos su confianza.<br><br>Un saludo.<br><br><html>",
           "subject": "Pago "
         }
       },
@@ -74,11 +74,11 @@
         "email": "{{email}}",
         "phone_number": "{{tlf}}",
         "order": "",
-        "amount": "{{amount}}",
-        "currency": "{{divisa}}",
+        "amount": "{{amountFormatted}}",
+        "currency": "{{currency}}",
         "reconciliation": "SABA",
         "datetime": "{{dateTime}}",
-        "client": "Saba Aparcamientos, S.A.",
+        "client": "{{client}}",
         "custom": {},
         "preferred_transport": "mail",
         "notification_templates": [

@@ -79,7 +79,6 @@
         "reconciliation": "SABA",
         "datetime": "{{dateTime}}",
         "client": "{{client}}",
-        "custom": {},
         "preferred_transport": "mail",
         "notification_templates": [
           {
